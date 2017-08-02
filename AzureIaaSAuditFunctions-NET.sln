@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26720.2
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureIaaSAuditFunctions-NET", "AzureIaaSAuditFunctions-NET\AzureIaaSAuditFunctions-NET.csproj", "{C0B1815D-A1EA-466B-94C5-71181DC3B680}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C0B1815D-A1EA-466B-94C5-71181DC3B680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B1815D-A1EA-466B-94C5-71181DC3B680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B1815D-A1EA-466B-94C5-71181DC3B680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B1815D-A1EA-466B-94C5-71181DC3B680}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D9F69C05-772D-4CF3-8D58-235BDE125E6F}
+	EndGlobalSection
+EndGlobal
