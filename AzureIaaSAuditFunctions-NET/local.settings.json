@@ -1,13 +1,13 @@
 {
     "IsEncrypted": false,
   "Values": {
-    "AzureWebJobsStorage": "DefaultEndpointsProtocol=https;AccountName=auditappstorage;AccountKey=FrwQtnld8QemGH8VVB2/7v9WABHM4gJfPgCzgl7UU1TTAVRoUBJJkmi+/9XmFhm+0hkLW3CuWc0nkci3efJ37A==;EndpointSuffix=core.windows.net",
+    "AzureWebJobsStorage": "",
     "AzureWebJobsDashboard": "",
-    "auditstorage": "DefaultEndpointsProtocol=https;AccountName=auditappstorage;AccountKey=FrwQtnld8QemGH8VVB2/7v9WABHM4gJfPgCzgl7UU1TTAVRoUBJJkmi+/9XmFhm+0hkLW3CuWc0nkci3efJ37A==;EndpointSuffix=core.windows.net",
-    "AppID": "1fe26dcf-39d9-4ba4-a138-1176496b658a",
-    "AppKey": "VE7wv8tCzasGmNrJ6SwAxykNOQncESy165tGca+XPZU=",
-    "TenantID": "feb0106c-50ef-4b39-8714-da9589109fcf",
-    "SubscriptionID": "3a1ad284-92e6-4b05-b32c-e96edf011ed4",
+    "auditstorage": "",
+    "AppID": "",
+    "AppKey": "",
+    "TenantID": "",
+    "SubscriptionID": "",
     "CosmosConn": ""
   }
 }
