@@ -14,7 +14,7 @@ namespace AzureIaaSAudit
     public static class IaaSAudit_RGtoQueue_Timer
     {
         [FunctionName("IaaSAudit-RGtoQueue-Timer")]
-        public static void Run([TimerTrigger("0 */1 * * * *")]TimerInfo myTimer, [Queue("auditresourcegroups", Connection = "auditstorage")]ICollector<string> resourceGroups, TraceWriter log)
+        public static void Run([TimerTrigger("0 */45 * * * *")]TimerInfo myTimer, [Queue("auditresourcegroups", Connection = "auditstorage")]ICollector<string> resourceGroups, TraceWriter log)
         {
             log.Info($"IaaSAudit RG to Queue Timer trigger function executed at: {DateTime.Now}");
 
@@ -33,6 +33,7 @@ namespace AzureIaaSAudit
             foreach (var group in azure.ResourceGroups.List())
             {
                 resourceGroups.Add(group.Name);
+                log.Info($"Added the following resource group to the queue: {group.Name}");
             }
 
             log.Info($"IaaSAudit RG to Queue Timer triggger function completed at: {DateTime.Now}");

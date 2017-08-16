@@ -16,6 +16,8 @@ namespace AzureIaaSAudit.Entities
 
         public List<VMEntity> VMs = new List<VMEntity>();
 
+        public List<NICEntity> OrphanedNICs = new List<NICEntity>();
+
         public SubnetEntity(string name, string cidr) {
             this.SubnetName = name;
             this.CIDR = cidr;

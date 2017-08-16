@@ -9,6 +9,8 @@ I built this project as the starting point for the creation of an Audit Report f
 
 Like any other application that will be deployed to Azure into an App Service, this application can be deployed directly within Visual Studio. In addition, these Functions can be deployed using a number of other means, you can check out the following documentation: [Automate Resource Deployment](https://docs.microsoft.com/en-us/azure/azure-functions/functions-infrastructure-as-code)
 
+Please be aware that in addition to the connection strings that are pulled from the App Settings to make connections, the Queue Trigger based function will also require that the CosmosDB contain a Database called "azureaudit" and that database will need to have a Collection called "resourceggroups".
+
 ## Built With
 
 * [Azure Functions C#](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-csharpg) 

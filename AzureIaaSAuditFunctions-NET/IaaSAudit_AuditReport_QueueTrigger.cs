@@ -30,7 +30,7 @@ namespace AzureIaaSAudit
 
         [FunctionName("IaaSAudit_RGAudit_QueueTrigger")]        
         public static void Run([QueueTrigger("auditresourcegroups", Connection = "auditstorage")]string resourceGroup, TraceWriter log,
-                [DocumentDB("azureaudit", "rgiaasaudit", ConnectionStringSetting = "CosmosConn")] out string rgDocument)
+                [DocumentDB("azureaudit", "resourcegroups", ConnectionStringSetting = "CosmosConn")] out string rgDocument)
         {
             log.Info($"C# Queue trigger function started: {resourceGroup}");
 
@@ -100,10 +100,17 @@ namespace AzureIaaSAudit
 
                     foreach (INetworkInterface nic in NICs)
                     {
-                        var vm = azure.VirtualMachines.GetById(nic.VirtualMachineId);
-                        VMEntity NonLBVMEntity = CreateVMEntity(vm, azure);
-
-                        AuditSubnet.VMs.Add(NonLBVMEntity);
+                        // Need to check for the possibility of orphaned NIC Cards
+                        if (!String.IsNullOrEmpty(nic.VirtualMachineId))
+                        {
+                            var vm = azure.VirtualMachines.GetById(nic.VirtualMachineId);
+                            VMEntity NonLBVMEntity = CreateVMEntity(vm, azure);
+                            AuditSubnet.VMs.Add(NonLBVMEntity);
+                        }
+                        else {
+                            AuditSubnet.OrphanedNICs.Add(new NICEntity(nic.Id, nic.Name, nic.PrimaryPrivateIP));
+                        }
+                        
                     }
 
                     if (subnet.NetworkSecurityGroupId != null)
